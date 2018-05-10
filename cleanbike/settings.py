@@ -25,7 +25,7 @@ SECRET_KEY = 'l16qrl%b__v1c$pt!y5@rtw^1k_uj_cc+5rg-t^epw0m#puzj#'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['clean-bike.herokuapp.com']
 
 
 # Application definition
