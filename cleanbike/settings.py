@@ -25,7 +25,7 @@ SECRET_KEY = 'l16qrl%b__v1c$pt!y5@rtw^1k_uj_cc+5rg-t^epw0m#puzj#'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['clean-bike.herokuapp.com']
+ALLOWED_HOSTS = ['*'] # Not very safe i know
 
 
 # Application definition
@@ -54,7 +54,7 @@ ROOT_URLCONF = 'cleanbike.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -112,6 +112,11 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+
+STATICFILES_DIRS = [
+        os.path.join(BASE_DIR, "static")
+]
 
 
 # Static files (CSS, JavaScript, Images)
