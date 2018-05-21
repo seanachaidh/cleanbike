@@ -32,6 +32,8 @@
 <body>    
     
             <div class="folium-map" id="map_a7eb6d602a6946b5a86cd990556dfb80" ></div>
+            <span style="display: hidden;" id="firstbox"> Not chosen </span>
+            <span style="display: hidden;" id="secondbox"> Not chosen </span>
         
 </body>
 <script>    
@@ -7890,5 +7892,33 @@
   "stroke": true,
   "weight": 3
 }).addTo(map_a7eb6d602a6946b5a86cd990556dfb80);
+            
+</script>
+
+	<script type="text/javascript">
+        	// Voor het wisseleffect
+        	var donefirst = false;
+        	
+        	//functie voor het afhandelen van kilks op de kaart
+        	function mapClick(event) {
+            //alert(event.latlng);
+            
+            elem = null;
+            
+            if(!donefirst) {
+                elem = document.getElementById('firstbox');
+            } else {
+                elem = document.getElementById('secondbox');
+            }
+            
+            elem.innerText = event.latlng;
+            donefirst = !donefirst;
+            
+         }
+        	// Using the generated map
+            
+            
+            // Koppel het evenement aan de kaart
+            map_a7eb6d602a6946b5a86cd990556dfb80.on('click', mapClick);
             
 </script>

@@ -21,7 +21,10 @@ from django.conf.urls.static import static
 
 from . import views
 
+from django.views.generic import TemplateView
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index),
+    path('routing', TemplateView.as_view(template_name="cleanbike/routes_final_2.html"))
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
