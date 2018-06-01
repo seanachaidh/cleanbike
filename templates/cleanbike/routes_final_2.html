@@ -49,9 +49,18 @@
     </div>
     <div class="folium-map" id="map_a7eb6d602a6946b5a86cd990556dfb80" ></div>
 </body>
+
+<script type="text/javascript">
+    function clickme(e) {
+        console.log("you clicked");
+        e.target.setIcon(markIcon);
+    }
+</script>
+
 <script>
                 var bounds = null;
-            
+                
+
 
             var map_a7eb6d602a6946b5a86cd990556dfb80 = L.map(
                                   'map_a7eb6d602a6946b5a86cd990556dfb80',
@@ -64,7 +73,14 @@
                                  });
             
         
-    
+            var markIcon = L.icon({
+                    iconUrl: 'checkmark.png',
+                    iconSize:     [38, 95], // size of the icon
+                    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+                    shadowAnchor: [4, 62],  // the same for the shadow
+                    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+                });
+            
             var tile_layer_be44b18e9f4246d1b8bff781804b8ac2 = L.tileLayer(
                 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
                 {
@@ -84,7 +100,7 @@
     
             var marker_cluster_0c61841c350442e2968dd2c6b5c80d3c = L.markerClusterGroup({
                 
-            });
+            }).on('click', clickme);
             feature_group_3ea70bbb126a452aa8b8959e63bbfbdc.addLayer(marker_cluster_0c61841c350442e2968dd2c6b5c80d3c);
             
     
